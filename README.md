@@ -44,6 +44,14 @@ Time Complexity
 - Best Case:    O(n^2)
 - Average Case: O(n^2)
 
+### [Radix Sort](sorting/radixsort.py)
+Time Complexity
+- Worst Case:   O(nw)
+- Best Case:    O(nw)
+- Average Case: O(nw)
+
+where w is the length of the longest number and n is the size of the input array. Note: if k is greater than log(n), then a different sorting algorithm would be faster, but in reality we can always change the radix such that `k < log(n)`
+
 ## Dynamic Programming Exercises
 
 ### [Change Counting Problem](dynamicprogramming/coincounter.py)
