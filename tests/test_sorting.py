@@ -1,7 +1,7 @@
 import unittest
 import random
 
-from sorting import quicksort, heapsort, mergesort
+from sorting import quicksort, heapsort, mergesort, bubblesort
 
 
 class TestQuicksort(unittest.TestCase):
@@ -24,11 +24,22 @@ class TestHeapsort(unittest.TestCase):
         self.assertListEqual(self.sorted_data, actual)
 
 
-class TestHeapsort(unittest.TestCase):
+class TestMergesort(unittest.TestCase):
     def setUp(self):
         self.random_data = [random.random() for i in range(0, 1000)]
         self.sorted_data = sorted(self.random_data)
 
     def test_1(self):
         actual = mergesort.mergesort(self.random_data)
+        self.assertListEqual(self.sorted_data, actual)
+
+
+class TestBubblesort(unittest.TestCase):
+    def setUp(self):
+        # Smaller case, poor bubble sort
+        self.random_data = [random.random() for i in range(0, 100)]
+        self.sorted_data = sorted(self.random_data)
+
+    def test_1(self):
+        actual = bubblesort.bubblesort(self.random_data)
         self.assertListEqual(self.sorted_data, actual)
