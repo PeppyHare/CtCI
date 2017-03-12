@@ -1,8 +1,5 @@
 import unittest
 import random
-import timeit
-import pickle
-import sys
 
 from sorting import quicksort, heapsort
 
