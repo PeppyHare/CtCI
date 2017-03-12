@@ -1,3 +1,12 @@
+"""
+Time Complexity
+- Worst Case:   O(n^2)
+- Best Case:    O(n log n)
+- Average Case: O(n log n)
+
+"""
+
+
 def quicksort(input_list):
     less = []
     equal = []
