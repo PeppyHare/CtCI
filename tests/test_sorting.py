@@ -1,65 +1,52 @@
 import unittest
 import random
 
-from sorting import quicksort, heapsort, mergesort, bubblesort, insertionsort, selectionsort
+from sorting import (quicksort, heapsort, mergesort, bubblesort, insertionsort,
+                     selectionsort)
 
 
-class TestQuicksort(unittest.TestCase):
+class SortingAlgorithmTestCase(unittest.TestCase):
+    """
+    Shared setup/teardown for sorting algorithm test cases
+    """
+
     def setUp(self):
-        self.random_data = [random.random() for i in range(0, 1000)]
-        self.sorted_data = sorted(self.random_data)
-
-    def test_1(self):
-        actual = quicksort.quicksort(self.random_data)
-        self.assertListEqual(self.sorted_data, actual)
+        self.input = [random.random() for i in range(0, 100)]
+        random.shuffle(self.input)
+        self.expected = sorted(self.input)
 
 
-class TestHeapsort(unittest.TestCase):
-    def setUp(self):
-        self.random_data = [random.random() for i in range(0, 1000)]
-        self.sorted_data = sorted(self.random_data)
-
-    def test_1(self):
-        actual = heapsort.heapsort(self.random_data)
-        self.assertListEqual(self.sorted_data, actual)
+class TestQuicksort(SortingAlgorithmTestCase):
+    def test_quicksort(self):
+        actual = quicksort.quicksort(self.input)
+        self.assertListEqual(self.expected, actual)
 
 
-class TestMergesort(unittest.TestCase):
-    def setUp(self):
-        self.random_data = [random.random() for i in range(0, 1000)]
-        self.sorted_data = sorted(self.random_data)
-
-    def test_1(self):
-        actual = mergesort.mergesort(self.random_data)
-        self.assertListEqual(self.sorted_data, actual)
+class TestHeapsort(SortingAlgorithmTestCase):
+    def test_heapsort(self):
+        actual = heapsort.heapsort(self.input)
+        self.assertListEqual(self.expected, actual)
 
 
-class TestBubblesort(unittest.TestCase):
-    def setUp(self):
-        # Smaller case, poor bubble sort
-        self.random_data = [random.random() for i in range(0, 100)]
-        self.sorted_data = sorted(self.random_data)
-
-    def test_1(self):
-        actual = bubblesort.bubblesort(self.random_data)
-        self.assertListEqual(self.sorted_data, actual)
+class TestMergesort(SortingAlgorithmTestCase):
+    def test_mergesort(self):
+        actual = mergesort.mergesort(self.input)
+        self.assertListEqual(self.expected, actual)
 
 
-class TestInsertionSort(unittest.TestCase):
-    def setUp(self):
-        self.random_data = [random.random() for i in range(0, 100)]
-        self.sorted_data = sorted(self.random_data)
-
-    def test_1(self):
-        actual = insertionsort.insertionsort(self.random_data)
-        self.assertListEqual(self.sorted_data, actual)
+class TestBubblesort(SortingAlgorithmTestCase):
+    def test_bubblesort(self):
+        actual = bubblesort.bubblesort(self.input)
+        self.assertListEqual(self.expected, actual)
 
 
-class TestSelectionSort(unittest.TestCase):
-    def setUp(self):
-        self.random_data = [random.random() for i in range(0, 100)]
-        self.sorted_data = sorted(self.random_data)
+class TestInsertionSort(SortingAlgorithmTestCase):
+    def test_insertionsort(self):
+        actual = insertionsort.insertionsort(self.input)
+        self.assertListEqual(self.expected, actual)
 
-    def test_1(self):
-        actual = selectionsort.selectionsort(self.random_data)
-        self.assertListEqual(self.sorted_data, actual)
+
+class TestSelectionSort(SortingAlgorithmTestCase):
+    def test_selectionsort(self):
+        actual = selectionsort.selectionsort(self.input)
+        self.assertListEqual(self.expected, actual)
