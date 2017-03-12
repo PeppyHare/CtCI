@@ -1,3 +1,26 @@
+"""
+The Coin Change Problem
+Inputs: You are given an amount of money (N) and a list of coins such as C = ([1, 5, 10, 25])
+Output: Define S(N, m, C) = How many ways to make change for N using only the first m coins in C?
+    Gotcha: when indexing to find coin m, use C[m-1] because python indexes start at 0
+
+Optimal substructure :robot: :
+
+Assume I know the answers to S(1 ... N-1, 1...m, C). Then the answer to S(N, C) is the sum of two cases for each coin:
+
+ - Case 1: Number of ways to make change for S without using any of coin m
+    -> S(N, m-1, C)
+ - Case 2: Use at least one of coin m to make change for S
+    - > S(N-C[m], m, C)
+
+Store S(N, m, C) in a table[N][m] (N+1) x (m+1)
+
+Base cases:
+ - if m == 0 -> table[:][0] = 0
+ - if N == 0 -> table[0][:] = 1
+"""
+
+
 def count(N, m, coin_list):
     if m == 0:
         return 0
