@@ -2,7 +2,7 @@ import unittest
 import random
 
 from sorting import (quicksort, heapsort, mergesort, bubblesort, insertionsort,
-                     selectionsort)
+                     selectionsort, radixsort)
 
 
 class SortingAlgorithmTestCase(unittest.TestCase):
@@ -12,7 +12,6 @@ class SortingAlgorithmTestCase(unittest.TestCase):
 
     def setUp(self):
         self.input = [random.random() for i in range(0, 100)]
-        random.shuffle(self.input)
         self.expected = sorted(self.input)
 
 
@@ -49,4 +48,15 @@ class TestInsertionSort(SortingAlgorithmTestCase):
 class TestSelectionSort(SortingAlgorithmTestCase):
     def test_selectionsort(self):
         actual = selectionsort.selectionsort(self.input)
+        self.assertListEqual(self.expected, actual)
+
+
+class TestRadixSort(unittest.TestCase):
+    def setUp(self):
+        self.input = list(range(100))
+        random.shuffle(self.input)
+        self.expected = sorted(self.input)
+
+    def test_radixsort(self):
+        actual = radixsort.radixsort(self.input)
         self.assertListEqual(self.expected, actual)
