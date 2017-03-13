@@ -1,6 +1,6 @@
 import unittest
 
-from algorithms import (coincounter, matrixflipper)
+from algorithms import (coincounter, matrixflipper, bonappetit)
 
 
 class TestChangeMaker(unittest.TestCase):
@@ -27,4 +27,14 @@ class TestMatrixFlipper(unittest.TestCase):
                        [15, 78, 101, 43], [62, 98, 114, 108]]
         expected = 414
         actual = matrixflipper.matrixflipper(2, test_matrix)
+        self.assertEqual(expected, actual)
+
+
+class TestBonAppetit(unittest.TestCase):
+    def test_bonappetit(self):
+        k = 1
+        costs = [3, 10, 2, 9]
+        bill = 12
+        expected = 5
+        actual = bonappetit.bonappetit(k, costs, bill)
         self.assertEqual(expected, actual)
