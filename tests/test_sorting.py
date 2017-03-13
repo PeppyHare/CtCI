@@ -2,7 +2,7 @@ import unittest
 import random
 
 from sorting import (quicksort, heapsort, mergesort, bubblesort, insertionsort,
-                     selectionsort, radixsort, bucketsort)
+                     selectionsort, radixsort, bucketsort, countingsort)
 
 
 class SortingAlgorithmTestCase(unittest.TestCase):
@@ -12,6 +12,17 @@ class SortingAlgorithmTestCase(unittest.TestCase):
 
     def setUp(self):
         self.input = [random.random() for i in range(0, 100)]
+        self.expected = sorted(self.input)
+
+
+class SortingIntegersAlgorithmTestCase(unittest.TestCase):
+    """
+    Shared setup/teardown for sorting algorithms with integer inputs
+    """
+
+    def setUp(self):
+        self.input = list(range(100))
+        random.shuffle(self.input)
         self.expected = sorted(self.input)
 
 
@@ -51,23 +62,19 @@ class TestSelectionSort(SortingAlgorithmTestCase):
         self.assertListEqual(self.expected, actual)
 
 
-class TestRadixSort(unittest.TestCase):
-    def setUp(self):
-        self.input = list(range(100))
-        random.shuffle(self.input)
-        self.expected = sorted(self.input)
-
+class TestRadixSort(SortingIntegersAlgorithmTestCase):
     def test_radixsort(self):
         actual = radixsort.radixsort(self.input)
         self.assertListEqual(self.expected, actual)
 
 
-class TestBucketSort(SortingAlgorithmTestCase):
-    def setUp(self):
-        self.input = list(range(100))
-        random.shuffle(self.input)
-        self.expected = sorted(self.input)
-
+class TestBucketSort(SortingIntegersAlgorithmTestCase):
     def test_bucketsort(self):
         actual = bucketsort.bucketsort(self.input)
+        self.assertListEqual(self.expected, actual)
+
+
+class TestCountingSort(SortingIntegersAlgorithmTestCase):
+    def test_countingsort_1(self):
+        actual = countingsort.countingsort(self.input)
         self.assertListEqual(self.expected, actual)
