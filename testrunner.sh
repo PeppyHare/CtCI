@@ -42,7 +42,6 @@ echo "$(date) :  Testing out new changes now :)"
 formatCode
 testUnit
 STATUS=$?
-sleep 1
 if [[ $STATUS == "0" ]]; then
 	printf "\033[32mPassing tests!\033[0m\n"
 	echo "I am in this directory: $(pwd)"
