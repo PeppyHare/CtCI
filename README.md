@@ -1,6 +1,6 @@
 # CtCI
 
-I know everyone and their grandmother is trying to plow through [Cracking the Code Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850) to ace their technical interviews, but it really is a tremendously helpful study guide. This repo just contains my worked solutions to a number of the problems in that book (and others) in Python. None of this is by any means meant to hold up to production code standards, but neither are these solutions as unpolished as technical interview code might be.
+I know everyone and their grandmother is trying to plow through [Cracking the Code Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850) to ace their technical interviews, but it really is a tremendously helpful study guide. This repo just contains my worked solutions to a number of the problems/suggested exercises in that book (and others) in Python. None of this is by any means meant to hold up to production code standards, but neither are these solutions as unpolished as technical interview code might be.
 
 ## Sorting Algorithms
 

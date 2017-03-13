@@ -18,7 +18,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 testUnit() {
     cd "$DIR" || exit
-    python -m unittest discover tests   
+    python -m unittest discover tests
 }
 
 formatCode() {
