@@ -64,6 +64,13 @@ where w is the length of the longest number and n is the size of the input array
 
 ## Constructive Algorithm Exercises
 
+### [Bon Appetit](algorithms/bonappetit.py)
+Taken from [this problem on HackerRank](https://www.hackerrank.com/challenges/bon-appetit)
+
+_Anna and Brian order n items at a restaurant, but Anna declines to eat any of the kth item (where 0 < k < n) due to an allergy. When the check comes, they decide to split the cost of all the items they shared; however, Brian may have forgotten that they didn't split the kth item and accidentally charged Anna for it._
+
+_You are given n, k, the cost of each of the n items, and the total amount of money that Brian charged Anna for her portion of the bill. If the bill is fairly split, print Bon Appetit; otherwise, print the amount of money that Brian must refund to Anna._
+
 ### [Matrix flipping problem](algorithms/matrixflipper.py)
 Taken from [this problem on HackerRank](https://www.hackerrank.com/challenges/flipping-the-matrix)
 

@@ -31,10 +31,18 @@ class TestMatrixFlipper(unittest.TestCase):
 
 
 class TestBonAppetit(unittest.TestCase):
-    def test_bonappetit(self):
+    def test_bonappetit_1(self):
         k = 1
         costs = [3, 10, 2, 9]
         bill = 12
         expected = 5
+        actual = bonappetit.bonappetit(k, costs, bill)
+        self.assertEqual(expected, actual)
+
+    def test_bonappetit_2(self):
+        k = 1
+        costs = [3, 10, 2, 9]
+        bill = 7
+        expected = "Bon Appetit"
         actual = bonappetit.bonappetit(k, costs, bill)
         self.assertEqual(expected, actual)
