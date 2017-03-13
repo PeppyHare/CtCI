@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/PeppyHare/CtCI.svg?branch=master)](https://travis-ci.org/PeppyHare/CtCI)
-
 # CtCI
+[![Build Status](https://travis-ci.org/PeppyHare/CtCI.svg?branch=master)](https://travis-ci.org/PeppyHare/CtCI)
 
 I know everyone and their grandmother is trying to plow through [Cracking the Code Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850) to ace their technical interviews, but it really is a tremendously helpful study guide. This repo just contains my worked solutions to a number of the problems/suggested exercises in that book (and others) in Python. None of this is by any means meant to hold up to production code standards, but neither are these solutions as unpolished as technical interview code might be.
 
@@ -51,6 +50,15 @@ Time Complexity
 - Worst Case:   O(nw)
 - Best Case:    O(nw)
 - Average Case: O(nw)
+
+### [Bucket Sort (Bin Sort)](sorting/bucketsort.py)
+Time Complexity
+- Worst Case:   O(n^2)
+- Best Case:    O(n + k)
+- Average Case: O(n + k)
+
+Space Complexity:
+- Worst Case:   O(nk)
 
 where w is the length of the longest number and n is the size of the input array. Note: if k is greater than log(n), then a different sorting algorithm would be faster, but in reality we can always change the radix such that `k < log(n)`
 

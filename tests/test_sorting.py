@@ -2,7 +2,7 @@ import unittest
 import random
 
 from sorting import (quicksort, heapsort, mergesort, bubblesort, insertionsort,
-                     selectionsort, radixsort)
+                     selectionsort, radixsort, bucketsort)
 
 
 class SortingAlgorithmTestCase(unittest.TestCase):
@@ -59,4 +59,15 @@ class TestRadixSort(unittest.TestCase):
 
     def test_radixsort(self):
         actual = radixsort.radixsort(self.input)
+        self.assertListEqual(self.expected, actual)
+
+
+class TestBucketSort(SortingAlgorithmTestCase):
+    def setUp(self):
+        self.input = list(range(100))
+        random.shuffle(self.input)
+        self.expected = sorted(self.input)
+
+    def test_bucketsort(self):
+        actual = bucketsort.bucketsort(self.input)
         self.assertListEqual(self.expected, actual)
