@@ -62,9 +62,16 @@ Space Complexity:
 
 where w is the length of the longest number and n is the size of the input array. Note: if k is greater than log(n), then a different sorting algorithm would be faster, but in reality we can always change the radix such that `k < log(n)`
 
+## Constructive Algorithm Exercises
+
+### [Matrix flipping problem](algorithms/matrixflipper.py)
+Taken from [this problem on HackerRank](https://www.hackerrank.com/challenges/flipping-the-matrix)
+
+_Sean invented a game involving a 2n x 2n matrix where each cell of the matrix contains an integer. He can reverse any of its rows or columns any number of times, and the goal of the game is to maximize the sum of the elements in the n x n submatrix located in the upper-left corner of the 2n x 2n matrix (i.e. its upper-left quadrant)._
+
 ## Dynamic Programming Exercises
 
-### [Change Counting Problem](dynamicprogramming/coincounter.py)
+### [Change Counting Problem](algorithms/coincounter.py)
 Taken from [this problem on HackerRank](https://www.hackerrank.com/challenges/coin-change)
 
 _How many different ways can you make change for an amount, given a list of coins? In this problem, your code will need to efficiently compute the answer._

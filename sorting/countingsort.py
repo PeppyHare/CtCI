@@ -15,8 +15,6 @@ def countingsort(input_list):
     max_input = max(input_list)
     min_input = min(input_list)
     input_range = abs(max_input - min_input + 1)
-    print("\nmin input: ", min_input)
-    print("\nmax input: ", max_input)
 
     # Calculate the histogram of key frequencies:
     count = [0 for _ in range(input_range)]
