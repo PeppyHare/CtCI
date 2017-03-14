@@ -1,6 +1,7 @@
 import unittest
 
-from algorithms import (coincounter, matrixflipper, bonappetit)
+from algorithms import (coincounter, matrixflipper, bonappetit, eventree,
+                        stringsquisher)
 
 
 class TestChangeMaker(unittest.TestCase):
@@ -45,4 +46,29 @@ class TestBonAppetit(unittest.TestCase):
         bill = 7
         expected = "Bon Appetit"
         actual = bonappetit.bonappetit(k, costs, bill)
+        self.assertEqual(expected, actual)
+
+
+# class TestEvenTree(unittest.TestCase):
+#     def test_eventree(self):
+#         n = 10
+#         m = 9
+#         edges = [[2, 1], [3, 1], [4, 3], [5, 2], [6, 1], [7, 2], [8, 6],
+#                  [9, 8], [10, 8]]
+#         expected = 2
+#         actual = eventree.eventree(n, m, edges)
+#         self.assertEqual(expected, actual)
+
+
+class TestStringSquisher(unittest.TestCase):
+    def test_stringsquisher(self):
+        input_str = "aaabcccccdaa"
+        expected = "a3b1c5d1a2"
+        actual = stringsquisher.stringsquisher(input_str)
+        self.assertEqual(expected, actual)
+
+    def test_stringsquisher_2(self):
+        input_str = "abcdefz"
+        expected = "abcdefz"
+        actual = stringsquisher.stringsquisher(input_str)
         self.assertEqual(expected, actual)

@@ -76,6 +76,15 @@ Taken from [this problem on HackerRank](https://www.hackerrank.com/challenges/fl
 
 _Sean invented a game involving a 2n x 2n matrix where each cell of the matrix contains an integer. He can reverse any of its rows or columns any number of times, and the goal of the game is to maximize the sum of the elements in the n x n submatrix located in the upper-left corner of the 2n x 2n matrix (i.e. its upper-left quadrant)._
 
+### [Simple String Compression](algorithms/stringsquisher.py)
+Taken from Cracking the Code Interview chapter on strings.
+
+_String compression: implement a method to perform basic string compression using counts of characters._
+
+```"aabcccccaaa" -> "a2b1c5a3"``
+
+_If compressed string is not smaller than original, return the original string. Assume input only contains [a-z]_
+
 ## Dynamic Programming Exercises
 
 ### [Change Counting Problem](algorithms/coincounter.py)
